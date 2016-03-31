@@ -1,0 +1,195 @@
+﻿@inherits DotNetNuke.Web.Mvc.Framework.DnnWebViewPage<ClubReady.Modules.ClubReadyCalls.Models.Lead>
+@using System.Collections.Generic
+@using DotNetNuke.Web.Mvc.Helpers
+
+<script src='//cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js'></script>
+<link rel='stylesheet prefetch' href='//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css'>
+<div id="Lead-@Dnn.ModuleContext.ModuleId" class="container form-horizontal">
+    <fieldset>
+        <legend>@Dnn.LocalizeString("BasicSettings")</legend>
+
+
+        <div class="form-group">
+            <label for="firstName" class="col-md-4 control-label">@Dnn.LocalizeString("lblFirstName")</label>
+            <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    @Html.TextBoxFor(m => m.FirstName, new { Class = "form-control" })
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label for="lastName" class="col-md-4 control-label">@Dnn.LocalizeString("lblLastName")</label>
+            <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    @Html.TextBoxFor(m => m.LastName, new { Class = "form-control" })
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label for="email" class="col-md-4 control-label">@Dnn.LocalizeString("lblEmail")</label>
+            <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                    @Html.TextBoxFor(m => m.Email, new { Class = "form-control" })
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="cellPhone" class="col-md-4 control-label">@Dnn.LocalizeString("lblCellPhone")</label>
+            <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                    @Html.TextBoxFor(m => m.CellPhone, new { Class = "form-control" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-4 control-label"></label>
+            <div class="col-md-4">
+                <button type="submit" class="btn btn-warning">@Dnn.LocalizeString("Submit") <span class="glyphicon glyphicon-send"></span></button>
+            </div>
+        </div>
+        @Html.HiddenFor(m => m.ModuleId)
+
+        <div class="alert alert-success" role="alert" id="success_message"><i class="glyphicon glyphicon-thumbs-up"></i>
+            
+        @Dnn.LocalizeString("GuestPassSuccess")
+        </div>
+
+
+
+    </fieldset>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#Lead-@Dnn.ModuleContext.ModuleId').bootstrapValidator({
+            // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                first_name: {
+                    validators: {
+                        stringLength: {
+                            min: 2,
+                        },
+                        notEmpty: {
+                            message: 'Please supply your first name'
+                        }
+                    }
+                },
+                last_name: {
+                    validators: {
+                        stringLength: {
+                            min: 2,
+                        },
+                        notEmpty: {
+                            message: 'Please supply your last name'
+                        }
+                    }
+                },
+                email: {
+                    validators: {
+                        notEmpty: {
+                            message: 'Please supply your email address'
+                        },
+                        emailAddress: {
+                            message: 'Please supply a valid email address'
+                        }
+                    }
+                },
+                phone: {
+                    validators: {
+                        notEmpty: {
+                            message: 'Please supply your phone number'
+                        },
+                        phone: {
+                            country: 'US',
+                            message: 'Please supply a vaild phone number with area code'
+                        }
+                    }
+                },
+                address: {
+                    validators: {
+                        stringLength: {
+                            min: 8,
+                        },
+                        notEmpty: {
+                            message: 'Please supply your street address'
+                        }
+                    }
+                },
+                city: {
+                    validators: {
+                        stringLength: {
+                            min: 4,
+                        },
+                        notEmpty: {
+                            message: 'Please supply your city'
+                        }
+                    }
+                },
+                state: {
+                    validators: {
+                        notEmpty: {
+                            message: 'Please select your state'
+                        }
+                    }
+                },
+                zip: {
+                    validators: {
+                        notEmpty: {
+                            message: 'Please supply your zip code'
+                        },
+                        zipCode: {
+                            country: 'US',
+                            message: 'Please supply a vaild zip code'
+                        }
+                    }
+                },
+                comment: {
+                    validators: {
+                        stringLength: {
+                            min: 10,
+                            max: 200,
+                            message: 'Please enter at least 10 characters and no more than 200'
+                        },
+                        notEmpty: {
+                            message: 'Please supply a description of your project'
+                        }
+                    }
+                }
+            }
+        })
+            .on('success.form.bv', function (e) {
+                $('#success_message').slideDown({ opacity: "show" }, "slow") // Do something ...
+                $('#Lead-@Dnn.ModuleContext.ModuleId').data('bootstrapValidator').resetForm();
+
+                // Prevent form submission
+                e.preventDefault();
+
+                // Get the form instance
+                var $form = $(e.target);
+
+                // Get the BootstrapValidator instance
+                var bv = $form.data('bootstrapValidator');
+
+                // Use Ajax to submit form data
+                $.post($form.attr('action'), $form.serialize(), function (result) {
+                    console.log(result);
+                }, 'json');
+            });
+    });
+
+
+</script>

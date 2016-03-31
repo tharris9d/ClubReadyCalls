@@ -1,0 +1,33 @@
+﻿@inherits DotNetNuke.Web.Mvc.Framework.DnnWebViewPage<IEnumerable< ClubReady.Modules.ClubReadyCalls.Models.Lead >>
+
+@using System.Text.RegularExpressions
+@using DotNetNuke.Web.Mvc.Helpers
+
+
+<div id="Items-@Dnn.ModuleContext.ModuleId">
+    @if (Model.Count() == 0)
+    {
+        <p>@Dnn.LocalizeString("NoLeads")</p>
+    }
+    else
+    {
+        <ul class="tm_tl">
+            @foreach (var lead in Model)
+            {
+                <li class="tm_t">
+                    <h3>@lead.FirstName</h3>
+                    <div class="tm_td">@lead.LastName</div>
+                    @{
+                        if (Dnn.ModuleContext.IsEditable)
+                        {
+                            <div>
+                                <a href="@Url.Action("Edit", "Item", new {ctl = "Edit", leadId = lead.LeadId})">@Dnn.LocalizeString("EditItem")</a>
+                                <a href="@Url.Action("Delete", "Item", new {leadId = lead.LeadId})">@Dnn.LocalizeString("DeleteItem")</a>
+                            </div>
+                        }
+                    }
+                </li>
+            }
+        </ul>
+    }
+</div>

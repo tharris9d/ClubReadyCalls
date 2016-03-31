@@ -1,0 +1,6 @@
+c:\websites\dnndev.me\bin\ClubReadyCalls.dll.config
+c:\websites\dnndev.me\bin\ClubReadyCalls.dll
+c:\websites\dnndev.me\bin\ClubReadyCalls.pdb
+c:\websites\dnndev.me\desktopmodules\mvc\ClubReadyCalls\obj\Release\ClubReadyCalls.dll
+c:\websites\dnndev.me\desktopmodules\mvc\ClubReadyCalls\obj\Release\ClubReadyCalls.pdb
+C:\websites\dnndev.me\DesktopModules\MVC\ClubReadyCalls\obj\Release\ClubReadyCalls.csprojResolveAssemblyReference.cache

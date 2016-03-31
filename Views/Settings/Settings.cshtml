@@ -1,0 +1,41 @@
+﻿@inherits DotNetNuke.Web.Mvc.Framework.DnnWebViewPage <ClubReady.Modules.ClubReadyCalls.Models.Settings>
+
+@using DotNetNuke.Web.Mvc.Helpers
+
+<h2 id="dnnSitePanel-BasicSettings" class="dnnFormSectionHead"><a href="" class="dnnSectionExpanded">@Dnn.LocalizeString("BasicSettings")</a></h2>
+<fieldset>
+
+    <div class="dnnFormItem">
+        <div class="dnnLabel" style="position: relative;">
+            @Html.LabelFor(m => Model.ApiKey, new {@class = "col-md-2 control-label"})
+        </div>
+        @Html.TextBoxFor(m => Model.ApiKey)
+    </div>
+
+    <div class="dnnFormItem">
+        <div class="dnnLabel" style="position: relative;">
+            @Html.LabelFor(m => Model.StoreId, new { @class = "col-md-2 control-label" })
+        </div>
+        @Html.TextBoxFor(m => Model.StoreId)
+    </div>
+
+    <div class="dnnFormItem">
+        <div class="dnnLabel" style="position: relative;">
+            @Html.LabelFor(m => Model.ProspectTypeId, new {@class = "col-md-2 control-label"})
+        </div>
+        @Html.TextBoxFor(m => Model.ProspectTypeId)
+    </div>
+    <div class="dnnFormItem">
+        <div class="dnnLabel" style="position: relative;">
+            @Html.LabelFor(m => Model.ReferralTypeId, new {@class = "col-md-2 control-label"})
+        </div>
+        @Html.TextBoxFor(m => Model.ReferralTypeId)
+    </div>
+    <div class="dnnFormItem">
+        <div class="dnnLabel" style="position: relative;">
+            @Html.LabelFor(m => Model.SendEmail, new {@class = "col-md-2 control-label"})
+        </div>
+        @Html.CheckBoxFor(m => Model.SendEmail)
+    </div>
+</fieldset>
+
