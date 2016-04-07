@@ -7,7 +7,7 @@ This project is a sample of how to call ClubReady API endpoints, using C# code. 
 
 Currently Implemented End Points
 ------------------------------
-/users/prospect [POST] - An endpoint for adding a Lead/user to ClubReady. This module provides a simple "Lead" form in which you can configure the "Lead Type" [ProspectTypeId] and Referral type [ReferralTypeId], which are configured in DNN as Settings.
+* /users/prospect [POST] - An endpoint for adding a Lead/user to ClubReady. This module provides a simple "Lead" form in which you can configure the "Lead Type" [ProspectTypeId] and Referral type [ReferralTypeId], which are configured in DNN as Settings.
 
 Documentation 
 ------------------------------
