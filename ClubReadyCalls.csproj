@@ -113,6 +113,7 @@
   <ItemGroup>
     <Content Include="License.txt" />
     <Content Include="module.css" />
+    <None Include="README.md" />
     <Content Include="ReleaseNotes.txt" />
   </ItemGroup>
   <ItemGroup>

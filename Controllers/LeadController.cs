@@ -49,6 +49,7 @@ namespace ClubReady.Modules.ClubReadyCalls.Controllers
         [DnnModuleAuthorize(AccessLevel = SecurityAccessLevel.Anonymous)]
         public ActionResult Index(Lead lead)
         {
+
             if (lead.LeadId == -1)
             {
                 lead.CreatedByUserId = User.UserID;

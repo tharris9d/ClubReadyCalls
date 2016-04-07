@@ -31,17 +31,16 @@ namespace ClubReady.Modules.ClubReadyCalls.Components
     {
         public void CreateLead(Lead t, string apiKey, int storeId, int ProspectTypeId, int ReferralTypeId, bool SendEmail)
         {
+            //we're storing the Lead in the local DB first, so that we can keep track of any potential failures and be able to recover them at a future date
             using (IDataContext ctx = DataContext.Instance())
             {
                 var rep = ctx.GetRepository<Lead>();
                 rep.Insert(t);
             }
 
-            //get the settings
-
-            //call the CreateLead web service
+            
+            //call the CreateLead web service, this will return the "UserId" from ClubReady, we want to store that in the local DB as well
             t.ClubReadyUserId = CrApi.CreateClubReadyLead(t,apiKey,storeId, ProspectTypeId,ReferralTypeId,SendEmail);
-            //if we create a ClubReady user, we need to update the record in our local DB
             if (t.ClubReadyUserId > 0)
             {
                 UpdateLead(t);
