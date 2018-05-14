@@ -53,7 +53,7 @@ namespace ClubReady.Modules.ClubReadyCalls.Components
         public static int CreateClubReadyLead(Lead l, string apiKey, int storeId, int prospectTypeId, int referralTypeId, bool sendEmail)
         {
             //set the URL for the end point
-            Uri address = new Uri("http://www.clubready.com/api/current/users/prospect");
+            Uri address = new Uri("https://www.clubready.com/api/current/users/prospect");
 
             // Create the web request  
             HttpWebRequest request = WebRequest.Create(address) as HttpWebRequest;
