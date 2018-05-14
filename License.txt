@@ -1,8 +1,8 @@
 ﻿<div class="License">
 	<h3>License</h3>
 	<p class="Owner">
-		ClubReady.com  <a href=http://www.clubready.com/>http://www.clubready.com/</a></br>
-		Copyright (c) 2016</br>	
+		ClubReady.com  <a href=https://www.clubready.com/>https://www.clubready.com/</a></br>
+		Copyright (c) 2018</br>	
 		by ClubReady.com</br>
 	</p>
     <p>

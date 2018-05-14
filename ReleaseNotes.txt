@@ -2,22 +2,19 @@
 <p class="Contributor">
 	ClubReady.com <br />
 	<a href="mailto:modules@christoc.com">modules@christoc.com</a><br />
-	<a href=http://www.clubready.com/>http://www.clubready.com/</a><br />
+	<a href=https://www.clubready.com/>https://www.clubready.com/</a><br />
 </p>
 <hr/>
 <div class="License">
 	<h3>About the ClubReadyCalls</h3>
 	<p class="Owner">
-		<b>Version CHANGEME</b><br /><br />
+		<b>Version 00.00.01</b><br /><br />
 	</p>
-	<p>Description about version.</p>
+	<p>Initial Release.</p>
 	
 	<h4>Bug Fixes</h4>
 	<ul>
-			<li>List</li>
-			<li>of</li>
-			<li>bug</li>
-			<li>fixes</li>
+			<li>None</li>
 	</ul>
 	
 </div>

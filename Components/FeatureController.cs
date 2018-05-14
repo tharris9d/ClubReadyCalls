@@ -1,5 +1,5 @@
 /*
-' Copyright (c) 2016 ClubReady.com
+' Copyright (c) 2018 ClubReady.com
 '  All rights reserved.
 ' 
 ' THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED
